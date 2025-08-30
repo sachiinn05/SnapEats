@@ -1,4 +1,25 @@
 {
+  "name": "namaste-react.js",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000N\u0000a\u0000m\u0000a\u0000s\u0000t\u0000e\u0000.\u0000R\u0000e\u0000a\u0000c\u0000t\u0000J\u0000s\u0000\r\u0000 \u0000",
+  "homepage": "https://github.com/sachiinn05/Namaste.ReactJs#readme",
+  "bugs": {
+    "url": "https://github.com/sachiinn05/Namaste.ReactJs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachiinn05/Namaste.ReactJs.git"
+  },
+  "license": "ISC",
+  "author": "Sachin Singh",
+  "type": "commonjs",
+ 
+  "scripts": {
+    "start": "parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+
+  },
   "dependencies": {
     "parcel": "^2.15.4",
     "react": "^19.1.1",

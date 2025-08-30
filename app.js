@@ -1,40 +1,17 @@
-/**
- * 
- * <div id=parent> 
- *     <div id=child>
- *           <h1> i am h1 tag</h1>
- *        </div>
- * </div>
- * 
- */   
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child", key: "child1" }, [
-    React.createElement("h1", { key: "h1-1" }, "I am SACHIN SINGH"),
-    React.createElement("h2", { key: "h2-1" }, "I am H2 tag"),
-  ]),
+//JSX (transpiled before ir reaches the JS)-PARCEL-Babel
+//? JSX => Bable transpiled it to  React.createElement=>ReactElement-JS Oblect=>HTMLElement(render)
 
-  React.createElement("div", { id: "child2", key: "child2" }, [
-    React.createElement("h1", { key: "h1-2" }, "I am H1 tag"),
-    React.createElement("h2", { key: "h2-2" }, "I am H2 tag"),
-  ]),
-]);
+const jsxHeading=(<h2 className="head" tabIndex={5}>Namate React using JSX</h2>);
+console.log(jsxHeading);
 
-console.log(parent);
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+const root =ReactDOM.createRoot(document.getElementById("root"));
+root.render(jsxHeading);
 
    
    
    
    
    
-//    const heading=React.createElement("h1",{
-//     id:"heading",xyz:"abc"
-//    },"Hello  World from React.js");
-//    console.log(heading); 
-//     const root=ReactDOM.createRoot(document.getElementById("root"));
-//     root.render(heading);
