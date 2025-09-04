@@ -5,7 +5,7 @@
 
 }
 .logo img{
-    width: 130px;
+    width: 100px;
      height: auto;
 }
 
@@ -21,10 +21,14 @@ font-size: 24px;
 .res-card{
    padding: 5px;
   width: 200px;
-   height: 300px;
+   /* height: 380px; */
    margin: 5px;
+    text-overflow: ellipsis;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+     overflow: hidden;
+     word-wrap: break-word;
 }
-.res-card :hover{
+.res-card:hover{
     cursor: pointer;
     border: 1px solid red;
 }
@@ -35,6 +39,7 @@ font-size: 24px;
 .res-logo{
     padding: 5px;
     width: 190px;
+    height: 150px;
 }
 .res-container{
     display: flex;
