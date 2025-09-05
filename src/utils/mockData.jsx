@@ -1,50 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-
-const Header=()=>{
-    return (
-        <div className="header">
-            <div className="logo">
-                <img src="https://static.vecteezy.com/system/resources/previews/011/405/724/non_2x/call-food-logo-design-food-delivery-service-logo-concept-free-vector.jpg"></img>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-
-            </div>
-        </div>
-    )
-};
-
-const ResturantCard = ( props ) => {
-    const {resData}=props;
-  const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla } = resData;
-
-  return (
-    <div className="res-card">
-      <img
-        className="res-logo"
-        alt="res-logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_366/" +
-          cloudinaryImageId
-        }
-      />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} ⭐</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{sla.deliveryTime} mins</h4>
-    </div>
-  );
-};
-
-
 const resList= [
 {
 info: {
@@ -1596,35 +1549,4 @@ type: "WEBLINK"
 }
 },
 ];
-
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resList.map((restaurant, index) => (
-          <ResturantCard 
-            key={restaurant.info.id + "_" + index}  // ensures unique key
-            resData={restaurant.info}               // pass only info object
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout=()=>{
-    return <div className="app">
-        <Header/>
-        <Body/>
-    </div>;
-};
-const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>)
-
-   
-   
-   
-   
-   
+export default resList;
