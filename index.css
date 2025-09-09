@@ -2,21 +2,26 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
+    background-color: aquamarine;
 
 }
 .logo img{
-    width: 100px;
+    width: 70px;
      height: auto;
+     margin-top: 20px;
 }
 
 .nav-items>ul{
  display: flex;
 font-size: 24px;
  list-style-type: none;
+ text-decoration:wavy;
+ margin-left: 20px;
 }
 .nav-items>ul>li{
     padding: 10px;
     margin:10px;
+    text-decoration: dotted;
 }
 .res-card{
    padding: 5px;
@@ -30,11 +35,17 @@ font-size: 24px;
 }
 .res-card:hover{
     cursor: pointer;
-    border: 1px solid red;
+    border: 1px solid black;
 }
 
 .search{
-    padding:10px;
+    padding: 10px;
+
+
+}
+.search :hover{
+    cursor: pointer;
+
 }
 .res-logo{
     padding: 5px;
@@ -50,4 +61,56 @@ font-size: 24px;
 .filter-btn{
     margin: 10px;
     cursor: pointer;
+    background-color: lightgreen;
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-card{
+  width: 200px;
+  height: 400px;
+  background-color: rgb(234, 234, 224);
+  margin: 20px;
+}
+.login{
+    width: 55px;
+    height: 26px;
+    margin-top: 23px;
+    margin-right: 7px;
+    overflow: hidden; 
+    background-color:red;
+    cursor: pointer;
+
+}
+.filter{
+    display: flex;
+}
+.company-name {
+  font-size: 70px;       
+  font-weight: 800;     
+  letter-spacing: 2px;   
+  text-align: center;
+  margin-left: 30px;
+  flex-grow: 1;
+  margin-top: 25px;
+  
+}
+.logo {
+  display: inline-block; /* important so transform works */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Trigger animation on hover */
+.logo:hover {
+  animation: dance 0.5s infinite;
+}
+
+/* Define the dance animation */
+@keyframes dance {
+  0%   { transform: rotate(0deg) translateX(0); }
+  25%  { transform: rotate(-10deg) translateX(-3px); }
+  50%  { transform: rotate(10deg) translateX(3px); }
+  75%  { transform: rotate(-10deg) translateX(-3px); }
+  100% { transform: rotate(0deg) translateX(0); }
 }
