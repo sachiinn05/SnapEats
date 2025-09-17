@@ -1,84 +1,14 @@
-import { useState, useEffect } from "react";
-import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
+import MenuShimmer from "./MenuShimmer";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
+
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
-  const [error, setError] = useState(null);
+  
   const { resId } = useParams();
-
-  useEffect(() => {
-    fetchMenu();
-  }, [resId]);
-
-  const fetchMenu = async () => {
-    try {
-      const response = await fetch(
-        `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.48061&lng=77.5045716&restaurantId=${resId}&submitAction=ENTER`
-      );
-
-      if (!response.ok) throw new Error("Failed to fetch menu data");
-
-      const json = await response.json();
-
-      if (!json?.data) throw new Error("Invalid data format from API");
-
-      setResInfo(json.data);
-    } catch (err) {
-      console.error("Error fetching data:", err);
-      setError(err.message);
-
-      // Dummy fallback menu
-      setResInfo({
-        cards: [
-          {
-            card: {
-              card: {
-                "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-                info: {
-                  name: "Dummy Restaurant",
-                  cuisines: ["Test Cuisine", "Sample Food"],
-                  city: "Test City",
-                  avgRating: 4.5,
-                },
-              },
-            },
-          },
-          {
-            groupedCard: {
-              cardGroupMap: {
-                REGULAR: {
-                  cards: [
-                    {
-                      card: {
-                        card: {
-                          categories: [
-                            {
-                              title: "Snacks",
-                              itemCards: [
-                                {
-                                  card: { info: { id: "1", name: "Dummy Item 1", price: 5000 } },
-                                },
-                                {
-                                  card: { info: { id: "1", name: "Dummy Item 1 (Duplicate)", price: 7500 } },
-                                },
-                              ],
-                            },
-                          ],
-                        },
-                      },
-                    },
-                  ],
-                },
-              },
-            },
-          },
-        ],
-      });
-    }
-  };
-
-  if (!resInfo && !error) return <Shimmer />;
+  const {resInfo,error}=useRestaurantMenu(resId);
+ 
+  if (!resInfo && !error) return <MenuShimmer />;
 
   const restaurantInfoCard = resInfo?.cards?.find(
     (card) => card.card?.card?.["@type"] ===
