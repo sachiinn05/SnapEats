@@ -52,8 +52,7 @@ const Body = () => {
   }
 
   return (
-   <div className="body p-4 bg-gradient-to-r from-yellow-100 via-orange-200 to-pink-100">
-
+    <div className="body p-4 bg-gradient-to-r from-yellow-100 via-orange-200 to-pink-100 min-h-screen">
       {/* Filter Section */}
       <div className="filter flex flex-wrap justify-center items-center gap-4 mb-6">
         <div className="search flex gap-2">
@@ -83,7 +82,7 @@ const Body = () => {
           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
           onClick={handleTopRated}
         >
-          Top-Rated
+          Top-Rated Restaurants
         </button>
 
         <button
@@ -94,7 +93,7 @@ const Body = () => {
         </button>
       </div>
 
-      {/* Restaurants Grid - Swiggy-like */}
+      {/* Restaurants Grid */}
       <div className="res-container flex flex-wrap justify-center gap-6">
         {filteredRestaurants.map((restaurant) => (
           <Link
