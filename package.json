@@ -13,12 +13,13 @@
   "license": "ISC",
   "author": "Sachin Singh",
   "type": "commonjs",
-  "scripts": {
-    "start": "parcel index.html",
-      "build":"parcel build index.html",
-      "build": "parcel build index.html",
-    "test": "jest"
-  },
+"scripts": {
+  "start": "parcel index.html",
+  "build": "parcel build index.html",
+  "test": "jest"
+},
+
+   
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.13",
     "react": "^19.1.1",
