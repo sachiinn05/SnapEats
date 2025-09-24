@@ -19,6 +19,7 @@ const useRestaurantMenu=(resId)=>{
       if (!json?.data) throw new Error("Invalid data format from API");
 
       setResInfo(json.data);
+      console.log(json)
     } catch (err) {
       console.error("Error fetching data:", err);
       setError(err.message);
